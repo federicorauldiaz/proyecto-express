@@ -10,8 +10,14 @@
         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-card__supporting-text " for="{{id}}">
             <input type="checkbox" id="{{id}}" class="mdl-checkbox__input" {{#if completada}}checked{{/if}} />
             <span class="mdl-checkbox__label">{{titulo}}</span>
+			<a href="/borrar/{{id}}" class="mdl-delete__button">Eliminar</a> 
         </label>
     </div>
+	{{else}}
+		<div class="mdl-empty_list">Lista vacia para {{#ifview "todas"}}Todas las Tareas{{/ifview}}
+		                                             {{#ifview "pendientes"}}Tareas Pendientes{{/ifview}}
+													 {{#ifview "completas"}}Tareas Completas{{/ifview}}
+		</div>	
     {{/each}}
     <div class="mdl-card__actions mdl-grid">
         <div class="mdl-cell mdl-cell--5-col">

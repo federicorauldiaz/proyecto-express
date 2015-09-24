@@ -90,3 +90,21 @@
     border: 1px solid;
     border-color: rgba(0,0,0,0.2);
 }
+
+.task-item .mdl-delete__button {
+	color: rgba(0,0,0,0.24);
+}
+
+.task-item .mdl-delete__button:hover {
+	color: #FFFFFF;
+	background-color: #D490A3;
+}
+
+.mdl-empty_list {
+	color: #D490A3;
+    font-size: 24px;
+	width: 100%;
+	height: 48px;
+	box-sizing: border-box;
+	text-align: center;
+}

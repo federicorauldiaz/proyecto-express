@@ -113,6 +113,17 @@ modulo.post('/crear', function (req, res) {
     res.redirect('/');
 });
 
+// Ruta para borrar una tarea
+modulo.get('/borrar/:id', function (req, res) {
+    var tarea = Tarea.buscarUno(obtenerUsuarioId(req), req.params.id);
+    if (tarea) {
+		tarea.borrar();
+		res.redirect('/');
+	} else {
+        res.status(404).send('tarea no encontrada');
+    }	
+});
+
 // Middleware para obtener una tarea desde su id
 modulo.param('id', function (req, res, next, id) {
     var tarea = Tarea.buscarUno(obtenerUsuarioId(req), id);
